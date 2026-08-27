@@ -1,0 +1,44 @@
+@use '../../styles/abstracts/_mixins' as mixin
+
+.product-page
+  padding-top: 80px
+  padding-bottom: 80px
+
+.product-page__header
+  display: flex
+  align-items: center
+  justify-content: space-between
+  margin-bottom: 30px
+
+.product-page__title
+  font-family: var(--font-primary)
+  font-weight: var(--fw-bold)
+  color: var(--color-primary)
+  font-size: 40px
+
+.product-page__filters
+  display: flex
+  align-items: center
+  justify-content: space-between
+
+.product-page__body
+  margin-top: 30px
+
+@include mixin.media(lg)
+  .product-page
+    padding-top: 65px
+    padding-bottom: 65px
+
+@include mixin.media(sm)
+  .product-page
+    padding-top: 55px
+    padding-bottom: 55px
+
+  .product-page__filters
+    flex-direction: column
+    gap: 30px
+
+@include mixin.media(xs)
+  .product-page__header
+    flex-direction: column
+    gap: 30px

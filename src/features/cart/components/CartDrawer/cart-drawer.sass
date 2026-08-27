@@ -1,0 +1,62 @@
+@use '../../../../styles/abstracts/_index' as mixin
+
+.cart-drawer
+  position: fixed
+  top: 0
+  height: 100%
+  width: 400px
+  overflow-y: auto
+  right: -400px
+  @include mixin.hide
+  transition: var(--transition)
+  padding: 40px 20px
+  box-sizing: border-box
+  background-color: var(--color-white)
+  border: 1px solid var(--color-secondary)
+  z-index: 500
+  &.cart-drawer--active
+    right: 0
+    @include mixin.show
+
+.cart-list
+  display: flex
+  flex-direction: column
+  gap: 15px
+
+.cart-drawer-item
+  border: 1px solid var(--color-secondary)
+  border-radius: 20px
+  padding: 10px
+  box-sizing: border-box
+  display: flex
+  align-items: center
+  justify-content: space-between
+  gap: 15px
+
+.cart-drawer-item__title
+  font-family: var(--font-primary)
+  font-weight: var(--fw-regular)
+  color: var(--color-primary)
+  font-size: 16px
+
+.cart-drawer-item__delete
+  @include mixin.empty
+  color: var(--color-secondary)
+
+.cart-drawer__close
+  @include mixin.empty
+  margin-left: 30px
+  background-color: var(--color-secondary)
+  color: var(--color-white)
+  border-radius: 40px
+  padding: 5px 10px
+  display: flex
+  justify-self: flex-end
+  margin-bottom: 30px
+  cursor: pointer
+
+.cart-drawer__content
+  padding: 0
+
+.cart-drawer__summary
+  margin-top: 30px
